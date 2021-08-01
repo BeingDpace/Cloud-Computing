@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}SEARCH ENGINE{% endblock %}
+{% block content %}
+<br>
+<hr>
+<b>[{{name}}] FILE AFTER REMOVING PUNCTUTAION AND STOP WORDS:</b>
+<hr>
+<hr>
+<br>
+{% for item in results %}
+{{item}}
+{% endfor %}
+<br>
+<hr>
+<hr>
+<br>
+<br>
+{% endblock %}

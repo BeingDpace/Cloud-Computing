@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+    <title>ASSIGNMENT 1</title>
+</head>
+<body>
+<h1>Name: Deepesh Bhatta <br>
+</h1>
+{% for person in results %}
+<form action="/people/update/{{person[0]}}" method="POST" action="" enctype="multipart/form-data">
+    <p>picture</p>
+    <p><input type="file" name="file" placeholder="keyword"></p>
+    <p>salary</p>
+    <p><input value="{{person[2]}}" type="text" name="salary" placeholder="salary"></p>
+    <p>keyword</p>
+    <p><input type="text" value="{{person[6]}}" name="keywords" placeholder="keywords"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+{% endfor %}
+
+
+</body>
+</html>

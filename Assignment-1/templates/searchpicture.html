@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <title>SEARCH PICTURE BY NAME</title>
+</head>
+<body>
+  <h1>Name: Deepesh Bhatta <br>
+  </h1>
+<form method="POST" action="" enctype="multipart/form-data">
+    <p><input type="file" name="file"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+
+<div>
+    <h3>search for name</h3>
+    <form action="./search" method="POST" enctype="multipart/form-data">
+        <input type="text" value="" name="query" placeholder="search">
+        <input type="submit" value="Search">
+    </form>
+    <table>
+        {% for person in results %}
+        <tr>
+            <td><img src="static/files/{{person[5]}}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>

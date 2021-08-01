@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="container">
+    <form action="./search" method="POST" enctype="multipart/form-data" style="margin:auto;max-width:400px">
+        <div class="row" >
+           <select class='form-select form-select-lg mb-3' name="classification" id="classifyitem">
+                <option value="">none</option>
+                <option value="all">all</option>
+                <option value="vegi">vegi</option>
+                <option value="fruit">fruit</option>
+            </select>
+            <input type="submit" class="btn btn-primary" value="Search">
+        </div>
+    </form>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>IMAGE</th>
+            <th>NAME</th>
+            <th>PRICE</th>
+            <th>DESCRIPTION</th>
+            <th>ACTION</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in results %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td><a href="../detail/{{item[0]}}"><img height="50" width="50" src="../static/files/{{item[1]}}"></a></td>
+            <td>{{item[2]}}</td>
+            <td>{{item[3]}}</td>
+            <td>{{item[4]}}</td>
+            <td><a href="./cart/{{item[0]}}">ADD TO CART</a></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

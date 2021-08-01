@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block title %}SEARCH ENGINE{% endblock %}
+{% block content %}
+<hr>
+<hr>
+<b>COUNTING TOTAL NUMBER OF WORDS IN TEXT FILE:</b>
+<hr>
+<form action="{{ url_for('count') }}" method="get">
+    <input type="submit" value="COUNT">
+</form>
+<br>
+<hr>
+<hr>
+<b>REMOVE STOP WORD AND PUNCTUATION:</b>
+<hr>
+<form action="{{ url_for('tokenize') }}" method="POST" enctype="multipart/form-data">
+<label for="tokenize">Choose a text file:</label>
+<select name="textfile" id="tokenize">
+ <option value="Alice.txt">Alice</option>
+ <option value="CandideEn.txt">CandideEn</option>
+ <option value="Shakespeare.txt">Shakespeare</option>
+</select>
+<input type="submit" value="Show Results">
+</form>
+<br>
+<hr>
+<hr>
+<b>SEARCH WORDS:</b>
+<hr>
+<form action="{{ url_for('search_word') }}" method="GET">
+    Word: <input type="text" name="word" maxlength="200" width="60">
+    <label for="tokenize">Choose a text file:</label>
+    <select name="textfile" id="txt">
+     <option value="Alice.txt">Alice</option>
+     <option value="CandideEn.txt">CandideEn</option>
+     <option value="Shakespeare.txt">Shakespeare</option>
+    </select>
+    <input type="submit" value="Search">
+</form>
+<br>
+<hr>
+<hr>
+{% endblock %}
