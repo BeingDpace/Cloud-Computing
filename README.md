@@ -1,1 +1,2 @@
-# Projects done in Cloud-Computing
+# Cloud Computing
+Projects done in Cloud-Computing
